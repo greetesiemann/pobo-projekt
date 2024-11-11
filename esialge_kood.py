@@ -38,10 +38,27 @@ def pasta(järjend):
         pasta_fail = "kanapasta.txt"
         väljasta_retsept(pasta_fail)
 
+def frikadelli_supp(järjend):
+    if frikadelli_supp in järjend:
+        frikadellisupp_fail = "frikadellisupp.txt"
+        väljasta_retsept(frikadellisupp_fail)
+
+def lihapallid(järjend):
+    if lihapallid in järjend:
+        lihapallid_fail = "lihapallid.txt"
+        väljasta_retsept(lihapallid_fail)
+
+def kanašnitsel(järjend):
+    if kanašnitsel in järjend:
+        kanašnitsel_fail = "kanašnitsel.txt"
+        väljasta_retsept(kanašnitsel_fail)
+
 
 kana_pasta = ["kana", "pasta", "piim", "merevaik"]
 frikadelli_supp = ["kartul", "porgand", "frikadellid", "puljong"]
-retspetid = [kana_pasta, frikadelli_supp]
+lihapallid = ["hakkliha", "muna", "riivsai", "sibul", "küüslauk"]
+kanašnitsel = ["kana", "muna", "jahu", "riivsai"]
+retspetid = [kana_pasta, frikadelli_supp, lihapallid, kanašnitsel]
 
 
 def main():
@@ -49,6 +66,10 @@ def main():
     toiduained = set(toiduained.split(", "))
     saab_teha = kas_saab_valmistada(retspetid, toiduained)
     pasta(saab_teha)
+    frikadelli_supp(saab_teha)
+    lihapallid(saab_teha)
+    kanašnitsel(saab_teha)
+
 
 if __name__ == "__main__":
     main()
