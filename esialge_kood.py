@@ -9,7 +9,8 @@
 # Autorid: Hanna Samelselg, Greete Siemann
 #
 #
-# Lisakommentaar (nt käivitusjuhend):
+# Lisakommentaar (nt käivitusjuhend): 
+# Käivita programm ning sisesta toiduained omavahel eraldatud komaga.
 #
 ##################################################
 
@@ -63,12 +64,20 @@ def kas_saab_teha_kanašnitsel(võimalikud_retseptid):
         väljasta_retsept(kanašnitsel_fail)
 
 
+def kas_saab_teha_caesarisalat(võimalikud_retseptid):
+    if caesarisalat in võimalikud_retseptid:
+        caesarisalat_fail = "caesarisalat.txt"
+        print("\nHakkad valmistama Caesari salatit")
+        väljasta_retsept(caesarisalat_fail)
+
+
 
 kanapasta = ["kana", "pasta", "piim", "merevaik"]
 frikadellisupp = ["kartul", "porgand", "frikadellid", "puljong"]
 lihapallid = ["hakkliha", "muna", "riivsai", "sibul", "küüslauk"]
 kanašnitsel = ["kana", "muna", "jahu", "riivsai"]
-retspetid = [kanapasta, frikadellisupp, lihapallid, kanašnitsel]
+caesarisalat = ["kana", "salat", "tomat", "parmesan", "caesari kaste"]
+retspetid = [kanapasta, frikadellisupp, lihapallid, kanašnitsel, caesarisalat]
 
 
 #Põhifunktsioon
@@ -80,6 +89,7 @@ def main():
     kas_saab_teha_frikadellisupp(saab_teha)
     kas_saab_teha_lihapallid(saab_teha)
     kas_saab_teha_kanašnitsel(saab_teha)
+    kas_saab_teha_caesarisalat(saab_teha)
 
 
 if __name__ == "__main__":
