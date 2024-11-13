@@ -23,9 +23,9 @@ def väljasta_retsept(faili_nimi):
 
 
 #Funktsioon, mis kontrollib, kas toitu saab valmistada ja seejärel lisab järjendisse.
-def kas_saab_valmistada(retsepti_kogu, sisestatud_toiduained):
+def kas_saab_valmistada(retseptikogu, sisestatud_toiduained):
     saab_valmistada = []
-    for retsept in retsepti_kogu:
+    for retsept in retseptikogu:
         luger = 0
         for toiduaine in retsept:
             if toiduaine in sisestatud_toiduained:
