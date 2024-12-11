@@ -107,7 +107,7 @@ def main():
     toiduained = str(input("Sisesta olemasolevad toiduained: "))
     toiduained = set(toiduained.split(", "))
     saab_teha = kas_saab_valmistada(retspetid, toiduained)
-    if len(saab_teha) != 0:
+    if saab_teha != None:
         kas_saab_teha_kanapasta(saab_teha)
         kas_saab_teha_frikadellisupp(saab_teha)
         kas_saab_teha_lihapallid(saab_teha)
