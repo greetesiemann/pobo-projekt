@@ -107,13 +107,14 @@ def main():
     toiduained = str(input("Sisesta olemasolevad toiduained: "))
     toiduained = set(toiduained.split(", "))
     saab_teha = kas_saab_valmistada(retspetid, toiduained)
-    kas_saab_teha_kanapasta(saab_teha)
-    kas_saab_teha_frikadellisupp(saab_teha)
-    kas_saab_teha_lihapallid(saab_teha)
-    kas_saab_teha_kanašnitsel(saab_teha)
-    kas_saab_teha_caesarisalat(saab_teha)
-    kas_saab_teha_lillkapsasteik(saab_teha)
-    kas_saab_teha_köögiviljavokk(saab_teha)
+    if len(saab_teha) != 0:
+        kas_saab_teha_kanapasta(saab_teha)
+        kas_saab_teha_frikadellisupp(saab_teha)
+        kas_saab_teha_lihapallid(saab_teha)
+        kas_saab_teha_kanašnitsel(saab_teha)
+        kas_saab_teha_caesarisalat(saab_teha)
+        kas_saab_teha_lillkapsasteik(saab_teha)
+        kas_saab_teha_köögiviljavokk(saab_teha)
 
 
 if __name__ == "__main__":
