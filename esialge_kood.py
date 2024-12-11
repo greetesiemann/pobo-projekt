@@ -42,52 +42,49 @@ def kas_saab_valmistada(retseptikogu, sisestatud_toiduained):
             for puuduv in puuduvad_toiduained:
                 print(f"{puuduv},", end=" ")
             print("saad valmistada...")
-    if len(saab_valmistada) != 0:
-        return saab_valmistada
-    elif len(puuduvad_toiduained) == 0 and len(saab_valmistada) == 0:
-        print("Kahjuks ei ole ühtegi retsepti, mida saaks olemasolevatest toiduainetest valmistada")
+    return saab_valmistada
 
 
 #Järgnevad funktsioonid kontrollivad roa olemasolu saab_valmistada järjendis ning vajadusel kutsuvad välja funktsiooni, mis väljastab retsepti.
 def kas_saab_teha_kanapasta(võimalikud_retseptid):
     if kanapasta in võimalikud_retseptid:
-        print("\nHakkad valmistama kanapastat")
+        print("\nHakkad valmistama kanapastat\n")
         väljasta_retsept("kanapasta.txt")
 
 
 def kas_saab_teha_frikadellisupp(võimalikud_retseptid):
     if frikadellisupp in võimalikud_retseptid:
-        print("\nHakkad valmistama frikadellisuppi")
+        print("\nHakkad valmistama frikadellisuppi\n")
         väljasta_retsept("frikadellisupp.txt")
 
 
 def kas_saab_teha_lihapallid(võimalikud_retseptid):
     if lihapallid in võimalikud_retseptid:
-        print("\nHakkad valmistama lihapalle")
+        print("\nHakkad valmistama lihapalle\n")
         väljasta_retsept("lihapallid.txt")
 
 
 def kas_saab_teha_kanašnitsel(võimalikud_retseptid):
     if kanašnitsel in võimalikud_retseptid:
-        print("\nHakkad valmistama kanašnitslit")
+        print("\nHakkad valmistama kanašnitslit\n")
         väljasta_retsept("kanašnitsel.txt")
 
 
 def kas_saab_teha_caesarisalat(võimalikud_retseptid):
     if caesarisalat in võimalikud_retseptid:
-        print("\nHakkad valmistama Caesari salatit")
+        print("\nHakkad valmistama Caesari salatit\n")
         väljasta_retsept("caesarisalat.txt")
 
 
 def kas_saab_teha_lillkapsasteik(võimalikud_retseptid):
     if lillkapsasteik in võimalikud_retseptid:
-        print("\nHakkad valmistama lillkapsasteike")
+        print("\nHakkad valmistama lillkapsasteike\n")
         väljasta_retsept("lillkapsasteik.txt")
 
 
 def kas_saab_teha_köögiviljavokk(võimalikud_retseptid):
     if köögiviljavokk in võimalikud_retseptid:
-        print("\nHakkad valmistama köögiviljavokki")
+        print("\nHakkad valmistama köögiviljavokki\n")
         väljasta_retsept("köögiviljavokk.txt")
 
 
@@ -107,7 +104,9 @@ def main():
     toiduained = str(input("Sisesta olemasolevad toiduained: "))
     toiduained = set(toiduained.split(", "))
     saab_teha = kas_saab_valmistada(retspetid, toiduained)
-    if saab_teha != None:
+    if len(saab_teha) == 0:
+        print("Kahjuks ei ole ühtegi retsepti, mida saaks olemasolevatest toiduainetest valmistada")
+    else:
         kas_saab_teha_kanapasta(saab_teha)
         kas_saab_teha_frikadellisupp(saab_teha)
         kas_saab_teha_lihapallid(saab_teha)
