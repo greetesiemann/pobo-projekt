@@ -26,77 +26,73 @@ def väljasta_retsept(faili_nimi):
 
 #Funktsioon, mis kontrollib, kas toitu saab valmistada ja seejärel lisab järjendisse.
 def kas_saab_valmistada(retseptikogu, sisestatud_toiduained):
-    saab_valmistada = []
+    saab_valmistada = {}
     puuduvad_toiduained = []
-    for retsept in retseptikogu:
+    for võti, väärtus in retseptikogu.items():
         luger = 0
-        for toiduaine in retsept:
+        for toiduaine in väärtus:
             if toiduaine in sisestatud_toiduained:
                 luger += 1
             else:
                 puuduvad_toiduained.append(toiduaine)
-        if luger == len(retsept):
-            saab_valmistada.append(retsept)
+        if luger == len(väärtus):
+            saab_valmistada[võti] = väärtus
         elif len(puuduvad_toiduained) <= 2:
             print(f"Ostes juurde: ", end="")
             for puuduv in puuduvad_toiduained:
                 print(f"{puuduv},", end=" ")
-            print("saad valmistada...")
+            print(f"saad valmistada {võti}")
     return saab_valmistada
 
 
 #Järgnevad funktsioonid kontrollivad roa olemasolu saab_valmistada järjendis ning vajadusel kutsuvad välja funktsiooni, mis väljastab retsepti.
 def kas_saab_teha_kanapasta(võimalikud_retseptid):
-    if kanapasta in võimalikud_retseptid:
+    if "kanapasta" in võimalikud_retseptid:
         print("\nHakkad valmistama kanapastat\n")
         väljasta_retsept("kanapasta.txt")
 
 
 def kas_saab_teha_frikadellisupp(võimalikud_retseptid):
-    if frikadellisupp in võimalikud_retseptid:
+    if "frikadellisupp" in võimalikud_retseptid:
         print("\nHakkad valmistama frikadellisuppi\n")
         väljasta_retsept("frikadellisupp.txt")
 
 
 def kas_saab_teha_lihapallid(võimalikud_retseptid):
-    if lihapallid in võimalikud_retseptid:
+    if "lihapallid" in võimalikud_retseptid:
         print("\nHakkad valmistama lihapalle\n")
         väljasta_retsept("lihapallid.txt")
 
 
 def kas_saab_teha_kanašnitsel(võimalikud_retseptid):
-    if kanašnitsel in võimalikud_retseptid:
+    if "kanašnitsel" in võimalikud_retseptid:
         print("\nHakkad valmistama kanašnitslit\n")
         väljasta_retsept("kanašnitsel.txt")
 
 
 def kas_saab_teha_caesarisalat(võimalikud_retseptid):
-    if caesarisalat in võimalikud_retseptid:
+    if "caesarisalat" in võimalikud_retseptid:
         print("\nHakkad valmistama Caesari salatit\n")
         väljasta_retsept("caesarisalat.txt")
 
 
 def kas_saab_teha_lillkapsasteik(võimalikud_retseptid):
-    if lillkapsasteik in võimalikud_retseptid:
+    if "lillkapsasteik" in võimalikud_retseptid:
         print("\nHakkad valmistama lillkapsasteike\n")
         väljasta_retsept("lillkapsasteik.txt")
 
 
 def kas_saab_teha_köögiviljavokk(võimalikud_retseptid):
-    if köögiviljavokk in võimalikud_retseptid:
+    if "köögiviljavokk" in võimalikud_retseptid:
         print("\nHakkad valmistama köögiviljavokki\n")
         väljasta_retsept("köögiviljavokk.txt")
 
 
 
-kanapasta = ["kana", "pasta", "piim", "merevaik"]
-frikadellisupp = ["kartul", "porgand", "frikadellid", "puljong"]
-lihapallid = ["hakkliha", "muna", "riivsai", "sibul", "küüslauk"]
-kanašnitsel = ["kana", "muna", "jahu", "riivsai"]
-caesarisalat = ["kana", "salat", "tomat", "parmesan", "caesari kaste"]
-lillkapsasteik = ["lillkapsas", "riivjuust", "õli"]
-köögiviljavokk = ["külmutatud köögiviljad", "munanuudlid", "sojakaste", "mesi"]
-retspetid = [kanapasta, frikadellisupp, lihapallid, kanašnitsel, caesarisalat, lillkapsasteik, köögiviljavokk]
+retspetid = {"kanapasta": ["kana", "pasta", "piim", "merevaik"], "frikadellisupp": ["kartul", "porgand", "frikadellid", "puljong"], 
+             "lihapallid": ["hakkliha", "muna", "riivsai", "sibul", "küüslauk"], "kanašnitsel": ["kana", "muna", "jahu", "riivsai"], 
+             "caesarisalat": ["kana", "salat", "tomat", "parmesan", "caesari kaste"], "lillkapsasteik": ["lillkapsas", "riivjuust", "õli"],
+             "köögiviljavokk": ["külmutatud köögiviljad", "munanuudlid", "sojakaste", "mesi"]}
 
 
 #Põhifunktsioon
