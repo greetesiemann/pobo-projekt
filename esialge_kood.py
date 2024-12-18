@@ -73,7 +73,7 @@ def main():
         toiduained = set(toiduained.split(", "))
         saab_teha, puuduvate_toiduainete_retseptid = kas_saab_valmistada(retseptid, toiduained)
         if not saab_teha and not puuduvate_toiduainete_retseptid:
-            messagebox.showwarning("Kahjuks ei ole ühtegi retsepti, mida saaks olemasolevatest toiduainetest valmistada")
+            messagebox.showwarning("Teadaanne", "Kahjuks ei ole ühtegi retsepti, mida saaks olemasolevatest toiduainetest valmistada.")
         else:
             if saab_teha:
                 for retsept in saab_teha.keys():
@@ -90,20 +90,21 @@ def main():
     #Loome kasutajaliidese jaoks akna
     aken = tk.Tk()
     aken.title("Retseptivalija")
+    aken.configure(bg='#f3c683')
+    aken.geometry("450x200")
 
     #Kasutajaliidese elemdid
-    juhis = tk.Label(aken, text="Sisesta olemasolevad toiduained, eraldades need komadega:")
+    juhis = tk.Label(aken, text="Sisesta olemasolevad toiduained, eraldades need komadega:", bg='#f3c683')
     juhis.pack(pady=5)
 
     toiduained_sisend = tk.Entry(aken, width=50)
     toiduained_sisend.pack(pady=5)
 
-    kontrolli_nupp = tk.Button(aken, text="Vaata retsepte", command=kontrolli_toiduaineid)
+    kontrolli_nupp = tk.Button(aken, text="Vaata retsepte", command=kontrolli_toiduaineid, activebackground='#f4ad67')
     kontrolli_nupp.pack(pady=10)
 
     #Käivitame akna
     aken.mainloop()
-
 
 
 if __name__ == "__main__":
