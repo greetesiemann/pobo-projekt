@@ -11,7 +11,7 @@
 #
 # Lisakommentaar: 
 # Käivita programm ning sisesta toiduained omavahel eraldatud komaga.
-# Näide: toiduaine, toiduaine ...
+# Näide: toiduaine, toiduaine,...
 #
 ##################################################
 
