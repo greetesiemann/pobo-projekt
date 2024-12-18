@@ -60,10 +60,12 @@ def kuva_retsept(retsepti_nimi):
     messagebox.showinfo(f"Retsept - {retsepti_nimi}", retsept)
 
 
-retseptid = {"kanapasta": ["kana", "pasta", "piim", "merevaik"], "frikadellisupp": ["kartul", "porgand", "frikadellid", "puljong"], 
+retseptid = {"kanapasta": ["kana", "pasta", "piim", "merevaik"], "frikadellisupp": ["kartulid", "porgandid", "frikadellid", "puljong"], 
              "lihapallid": ["hakkliha", "muna", "riivsai", "sibul", "küüslauk"], "kanašnitsel": ["kana", "muna", "jahu", "riivsai"], 
              "caesarisalat": ["kana", "salat", "tomat", "parmesan", "caesari kaste"], "lillkapsasteik": ["lillkapsas", "riivjuust", "õli"],
-             "köögiviljavokk": ["külmutatud köögiviljad", "munanuudlid", "sojakaste", "mesi"]}
+             "köögiviljavokk": ["külmutatud köögiviljad", "munanuudlid", "sojakaste", "mesi"], "seenerisotto": ["šampinjonid", "riis", "puljong", "sibul"],
+             "kõrvitsasupp": ["kõrvits", "porgandid", "kartulid", "küüslauk", "puljong", "või", "merevaik"], "küpsisetort": ["küpsised", "hapukoor", "piim", "suhkur"],
+             "pannkoogid": ["muna", "jahu", "piim", "suhkur", "moos"]}
 
 
 #Põhifunktsioon

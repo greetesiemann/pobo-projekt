@@ -1,0 +1,9 @@
+Vaja läheb: küpsised, hapukoor, piim, suhkur
+
+Maitsesta hapukoor suhkruga.
+Kasta küpsised piima sisse ning seejärel
+aseta kandikule.
+Kui oled ühe kihi küpsiseid kandikule pannud.
+Pane nende peale hapukoor ja aja laiali.
+Korda tegevust kuni oled tordi kõrgusega rahul.
+Jäta küpsisetort üheks öök külmkappi.

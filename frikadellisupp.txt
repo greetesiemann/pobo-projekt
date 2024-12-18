@@ -1,4 +1,4 @@
-Vaja läheb: kartul, porgand, frikadellid, puljong
+Vaja läheb: kartulid, porgandid, frikadellid, puljong
 
 Pane vesi keema ja lisa puljongikuubik.
 Koori ja haki kartulid ja porgandid.
