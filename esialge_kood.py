@@ -3,22 +3,22 @@
 # 2024/2025 sügissemester
 #
 # Projekt: Pobo köögis
-# Teema: Mida võiks süüa teha?
+# Teema: Mida võiks teha süüa?
 #
 #
 # Autorid: Hanna Samelselg, Greete Siemann
 #
 #
-# Lisakommentaar (nt käivitusjuhend): 
+# Lisakommentaar: 
 # Käivita programm ning sisesta toiduained omavahel eraldatud komaga.
 # Näide: toiduaine, toiduaine ...
 #
 ##################################################
 
 
-#Impordime kasutajaliidese
 import tkinter as tk
 from tkinter import messagebox
+
 
 #Funktsioon, mis väljastab sobiliku retsepti, lugedes andmed failist.
 def väljasta_retsept(faili_nimi):
@@ -53,6 +53,7 @@ def kas_saab_valmistada(retseptikogu, sisestatud_toiduained):
                 print(f"{puuduv},", end=" ")
             print(f"saad valmistada {retsept}")
     return saab_valmistada, puuduvate_toiduainete_retseptid
+
 
 #Funktsioon, mis väljastab uues aknas retsepti, lugedes selle vastavast failist.
 def kuva_retsept(retsepti_nimi):
@@ -105,7 +106,7 @@ def main():
     kontrolli_nupp = tk.Button(aken, text="Vaata retsepte", command=kontrolli_toiduaineid, activebackground='#f4ad67')
     kontrolli_nupp.pack(pady=10)
 
-    #Käivitame akna
+
     aken.mainloop()
 
 
